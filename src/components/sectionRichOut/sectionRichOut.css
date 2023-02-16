@@ -1,0 +1,16 @@
+.secRich {
+width: 100%;
+background-color: lightgrey;
+padding: 179px 20px 179px 20px;
+position: relative;
+}
+.title {
+width: 563px;
+height: 58px;
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 40px;
+line-height: 130%;
+color: #3E3E3E;
+}
