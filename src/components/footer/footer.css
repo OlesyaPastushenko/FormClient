@@ -1,0 +1,42 @@
+.footer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    border: 1px solid #E5E5E5;
+    background-color: white;
+}
+.yellowBallsmall {
+width: 88px;
+height: 85px;
+ position: absolute;
+ right: 0px;
+ top: 51px
+}
+.group {
+    position: absolute;
+    width: 126.76px;
+    height: 16.09px;
+    top: 79px;
+    left: 340px;
+}
+.roseBall {
+position: absolute;
+left: 57px;
+bottom: 0px;
+
+}
+.greenBall {
+position: absolute;   
+height: 97px;
+width: 78px;
+right: 127px;
+top: 0px;
+}
+@media screen and (max-width: 800px) {
+    .roseBall{
+        display: none;
+    }
+    .group {
+       left: 80px;
+    }
+}

@@ -51,3 +51,11 @@ transition: 0.4s;
 .submitBtn:hover {
     scale: 1.08;
 }
+.mes {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    padding: 0px 10px 0px 10px;
+
+}
