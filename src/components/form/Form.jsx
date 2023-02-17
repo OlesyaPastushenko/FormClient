@@ -21,7 +21,7 @@ export default function Form() {
   }
   const onSubmit = async (data) => {
     let obj = {...data, id: Date.now()}
-    const dat = await request("http://localhost:4000/api/contacts","POST", obj);
+    const dat = await request("https://backendtestform.netlify.app/api/contacts","POST", obj);
     !dat && setMes("Sending...")
     dat=="OK" ? setMes("You message has been sent!") : setMes("Oops, something went wrong")
     console.log(dat);
