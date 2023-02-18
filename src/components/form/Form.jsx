@@ -7,17 +7,23 @@ export default function Form() {
     const headers = {"Content-type": "application/json"};
     let body;
     if (data) {
-    //   headers["Content-type"] = "application/json";
       console.log(data)
       body = JSON.stringify(data);
       console.log(body)
     }
+    try{
     const response = await fetch(url, {
       headers,
       method,
       body,
     });
     return await response.text();
+  }
+  catch (e) {
+    if (e) {
+      setMes("Oops, something went wrong")
+    }
+  }
   }
   const onSubmit = async (data) => {
     let obj = {...data, id: Date.now()}
