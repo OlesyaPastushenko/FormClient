@@ -12,7 +12,9 @@ export default function Form() {
       console.log(body)
     }
     try{
-    const response = await fetch(url, {
+    let response = null
+    !response && setMes("Sending...")
+    response = await fetch(url, {
       headers,
       method,
       body,
@@ -21,22 +23,21 @@ export default function Form() {
   }
   catch (e) {
     if (e) {
-      setMes("Oops, something went wrong")
+      console.log(e.message)
     }
   }
   }
   const onSubmit = async (data) => {
     let obj = {...data, id: Date.now()}
     const dat = await request("http://localhost:4000/api/contacts","POST", obj);
-    !dat && setMes("Sending...")
-    dat=="OK" ? setMes("You message has been sent!") : setMes("Oops, something went wrong")
+    dat==="OK" ? setMes("You message has been sent!") : setMes("Oops, something went wrong, (maybe you forgot 'npm start for server?)")
     console.log(dat);
     form.current.reset();
   };
   const { register, handleSubmit } = useForm();
   const form = useRef();
   return (
-    <form ref={form} className="form" onSubmit={handleSubmit(onSubmit)}>
+    <form ref={form} className="form" onSubmit={handleSubmit(onSubmit)} onClick={()=>{setMes('')}}>
       <input
         {...register("name")}
         className="input"
